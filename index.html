@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password & Notes Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="splash-screen">
+        <h1>Welcome to Notes & Password Manager</h1>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Password & Notes Manager</h1>
+        </header>
+        
+        <section class="form-section generate-password">
+            <h2>Generate Password</h2>
+            <input type="number" id="passwordLength" placeholder="Enter password length (min 5)">
+            <button id="generateBtn">Generate Password</button>
+            <textarea id="generatedPassword" placeholder="Generated Password" readonly></textarea>
+        </section>
+
+        <section class="form-section encrypt-text">
+            <h2>Encrypt Text</h2>
+            <input type="text" id="encryptText" placeholder="Text to encrypt">
+            <input type="text" id="encryptKey" placeholder="Secret Key">
+            <button id="encryptBtn">Encrypt</button>
+            <textarea id="encryptedText" placeholder="Encrypted Text" readonly></textarea>
+        </section>
+
+        <section class="form-section decrypt-text">
+            <h2>Decrypt Text</h2>
+            <input type="text" id="decryptText" placeholder="Text to decrypt">
+            <input type="text" id="decryptKey" placeholder="Secret Key">
+            <button id="decryptBtn">Decrypt</button>
+            <textarea id="decryptedText" placeholder="Decrypted Text" readonly></textarea>
+        </section>
+
+        <section class="form-section manage-passwords">
+            <h2>Add Passwords</h2>
+            <input type="text" id="accountName" placeholder="Account Name">
+            <input type="password" id="accountPassword" placeholder="Account Password">
+            <button id="storeBtn">Store Password</button>
+            <button id="getAllPasswordsBtn">Get All Passwords</button>
+            <div id="passwordList"></div>
+        </section>
+
+        <section class="form-section manage-notes">
+            <h2>Add Notes</h2>
+            <textarea id="noteText" placeholder="Add your note here..."></textarea>
+            <button id="addNoteBtn">Add Note</button>
+            <button id="getAllNotesBtn">Get All Notes</button>
+            <div id="noteList"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Splash screen functionality
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.splash-screen').classList.add('hidden');
+            }, 1000); // 1 second splash screen
+        });
+    </script>
+</body>
+</html>
